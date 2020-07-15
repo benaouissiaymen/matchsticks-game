@@ -1,0 +1,14 @@
+<div class="blc-player">
+    <div class="player">
+      <h2>{{ this.player.name }}</h2>
+    </div>
+
+    <div class="btnChoicePlayer">
+      <button type="button" class="btn btn-primary" (click)="play(this.player.id, 1)" 
+                [disabled]="game.currentPlayer.id!==this.player.id || game.numberOfCurrentMatchsticks < 1">1</button>
+      <button type="button" class="btn btn-primary" (click)="play(this.player.id, 2)" 
+                 [disabled]="game.currentPlayer.id!==this.player.id || game.numberOfCurrentMatchsticks < 2">2</button>
+      <button type="button" class="btn btn-primary" (click)="play(this.player.id, 3)" 
+                [disabled]="game.currentPlayer.id!==this.player.id || game.numberOfCurrentMatchsticks < 3">3</button>
+    </div>
+  </div>

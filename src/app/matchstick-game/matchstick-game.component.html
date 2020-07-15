@@ -1,0 +1,24 @@
+<div class="content">
+    <div class="title-page">
+      <h1> Jeu des allumettes</h1>
+    </div>
+  
+    <div class="blc-matchsticks">
+        <div class="matchsticks-img" *ngFor="let item of [].constructor(game.numberOfMatchsticks); let i = index">
+          <img src="assets/matchsticks/matchstickon.gif" *ngIf="isShowMatchstick(i+1) === true">
+          <img src="assets/matchsticks/matchstickoff.gif" *ngIf="isShowMatchstick(i+1) === false">
+        </div>
+    </div>
+  
+    <!-- Players -->
+    <div class="blc-players">
+      <app-player [id]="firstPlayer.id" [name]="firstPlayer.name" [game]="game" (playerPlay)="play($event)"></app-player>
+      <div class="blc-espacement"></div>
+      <app-player [id]="secondPlayer.id" [name]="secondPlayer.name" [game]="game" (playerPlay)="play($event)"></app-player>
+    </div>
+  
+    <div class="blc-btNewGame">
+      <button type="button" class="btn btn-danger" (click)="newGame()">Nouvelle partie</button>
+    </div>
+  
+  </div>
